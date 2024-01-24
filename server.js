@@ -11,12 +11,12 @@ nunjucks.configure('views', {
 });
 
 app.get('/', (req, res) => {
-  res.render('index.html');
+  res.render('index.njk');
   //console.log('somebody visited');
 });
 
 app.get('/page2', (req, res) => {
-    res.render('page2.html');
+    res.render('page2.njk');
   });
 
 app.listen(port, () => {
