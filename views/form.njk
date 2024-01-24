@@ -3,6 +3,10 @@
    {% block content %}
     
     <h1>FORM ;p </h1>
+
+    {% if fname and lname and age %}
+    <p>Hello  {{ fname }} {{ lname }}! you are {{ age }} years old. </p>
+    {% endif %}
     <form> 
         <p>
         <label for="fname"> First name <br></label>
