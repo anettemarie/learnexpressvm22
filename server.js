@@ -20,8 +20,10 @@ app.get('/page2', (req, res) => {
   });
 
   app.get('/form', (req, res) => {
+    console.log(req.query);
     res.render('form.njk');
   });
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}`);
