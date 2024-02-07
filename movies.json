@@ -1,1 +1,17 @@
-{"lastId":2,"movies":[{"id":0,"name":"Margaret Rahu","year":"2005","description":" Raske ikka veel"},{"id":1,"name":"Margaret Rahu","year":"2005","description":" Jap, ta kirjutas last asemel lasd v midagi"}]}
+{
+    "lastId": 2,
+    "movies": [
+        {
+            "id": 0,
+            "name": "Margaret Rahu",
+            "year": "2005",
+            "description": " Raske ikka veel"
+        },
+        {
+            "id": 1,
+            "name": "Margaret Rahu",
+            "year": "2005",
+            "description": " Jap, ta kirjutas last asemel lasd v midagi"
+        }
+    ]
+}
