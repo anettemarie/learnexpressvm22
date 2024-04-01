@@ -4,10 +4,17 @@ const express = require('express');
 const nunjucks = require('nunjucks')
 const app = express();
 const port = 3000;
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+const session =require('express-session');
+app.use(session({
+  secret: 'secret'
+}));
 
 app.use(express.urlencoded({
   extended:true
-}))
+}));
 
 nunjucks.configure('views', {
     autoescape: true,
@@ -40,6 +47,11 @@ app.get('/page2', (req, res) => {
 
 const movieController = require("./src/movieController.js")
 app.use("/movies", movieController)
+
+app.get('/cookie', (req, res) => {
+  res.cookie('mycookie', 'cool cookie', {maxAge: 1000*60*60*24*30});
+res.send(req.cookies);
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}`);
