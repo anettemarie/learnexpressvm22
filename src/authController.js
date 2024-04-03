@@ -40,13 +40,17 @@ router.post('/login', async(req, res) => {
 if(!user || !bcrypt.compareSync(req.body.password, user.password)){
 } else {
     req.session.user = user;
-    res.redirect('/');
+    req.session.save((err) => {
+        res.redirect('/');
+    });
+   
+
 }
 router.get('/logout', async(req, res) => {
     req.session.user = null;
     req.session.save((err) => {
         res.redirect('/');
-    })
+    });
 });
 
 
