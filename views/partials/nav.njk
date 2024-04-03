@@ -1,7 +1,16 @@
     <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/page2">Page2</a></li>
-        <li><a href="/form">form</a></li>
-        <li><a href="/circle">circle</a></li>
-        <li><a href="/movies">movies</a></li>
+        <li><a href="/page2">Page 2</a></li>
+        <li><a href="/form">Form</a></li>
+        <li><a href="/circle">Circle</a></li>
+        <li><a href="/movies">Movies</a></li>
+        {%if not user%}
+        <li><a href="/register">Register</a></li>
+        <li><a href="/login">Login</a></li>
+        {% else %}
+        <li>{{user.name}}</li>
+            <ul>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        {%endif%}
     </ul>

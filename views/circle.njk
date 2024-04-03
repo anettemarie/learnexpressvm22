@@ -1,19 +1,16 @@
-   {% extends "partials/layout.njk" %}
-   {% block title %}home{% endblock %}
-   {% block content %}
-     <h1>MJAU</h1>
-
-
-     <form method="post">
-    <p>
-        <label>
-            Radius <br>
-            <input type="number" placeholder="radius" name="radius">
-        </label>
-    </p>
-    <p>
-        <input type="submit" value="send">
-    </p>
-
-     </form>
-   {% endblock %}
+{% extends "partials/layout.njk" %}
+{% block title %}form{% endblock %}
+{% block content %}
+    <h1>Circle</h1>
+    <form method="POST">
+        <p>
+            <label> 
+                Radius <br>
+                <input type="number" placeholder="Radius" name="radius">
+            </label>
+        </p>
+        <p>
+            <input type="submit" value"Send">
+        </p>
+    </form>
+{% endblock %}

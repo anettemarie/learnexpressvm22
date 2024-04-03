@@ -12,13 +12,22 @@ app.use(session({
 
 app.use(express.urlencoded({extended:true}))
 
-nunjucks.configure('views', {
+const env = nunjucks.configure('views', {
     autoescape: true,
     express: app
 });
 
+app.use((req, res, next) => {
+  env.addGlobal('user', req.session.user)
+  next();
+});
+
+
+
 app.get('/', (req, res) => {
+  console.log(req.session.user);
   res.render('index.njk');
+
   //console.log('somebody visited');
 });
 
