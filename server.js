@@ -6,8 +6,13 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 const session = require('express-session');
+var FileStore = require('session-file-store')(session);
 app.use(session({
-  secret: 'secret'
+  store: new FileStore(),
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false,
+
 }));
 
 app.use(express.urlencoded({extended:true}))
