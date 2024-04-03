@@ -42,6 +42,13 @@ if(!user || !bcrypt.compareSync(req.body.password, user.password)){
     req.session.user = user;
     res.redirect('/');
 }
+router.get('/logout', async(req, res) => {
+    req.session.user = null;
+    req.session.save((err) => {
+        res.redirect('/');
+    })
+});
+
 
 });
 
