@@ -36,24 +36,25 @@ router.post('/login', async(req, res) => {
             email: req.body.email
         }
     });
+    if(!user || !bcrypt.compareSync(req.body.password, user.password)){
+        req.session.errors = ['invalid credentials!']
+        req.session.save
+        res.redirect('/login');
+    } else {
+        req.session.user = user;
+        req.session.save((err) => {
+            res.redirect('/');
+        })
+    }
+});
 
-if(!user || !bcrypt.compareSync(req.body.password, user.password)){
-} else {
-    req.session.user = user;
-    req.session.save((err) => {
-        res.redirect('/');
-    });
-   
-
-}
 router.get('/logout', async(req, res) => {
     req.session.user = null;
     req.session.save((err) => {
         res.redirect('/');
     });
-});
-
 
 });
+
 
 module.exports = router;
