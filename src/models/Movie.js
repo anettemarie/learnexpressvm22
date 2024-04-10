@@ -18,4 +18,8 @@ module.exports = sequelize.define('Movie', {
     description: {
        type: DataTypes.TEXT,
     }
+
  }, {tableName: 'movies', timestamps:false});
+
+ movie.belongsTo(User);
+ module.exports = Movie;

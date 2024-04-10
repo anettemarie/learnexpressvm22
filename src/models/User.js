@@ -1,7 +1,7 @@
 const {Sequelize, QueryTypes, DataTypes} = require('sequelize');
 let sequelize = new Sequelize('sqlite:db.sqlite');
 
-module.exports = sequelize.define('Movie', {
+const User = sequelize.define('User', {
     id: {
        type: DataTypes.INTEGER,
        autoIncrement: true,
@@ -20,3 +20,9 @@ module.exports = sequelize.define('Movie', {
        allowNull: false,
     }
  }, {tableName: 'users', timestamps:false});
+
+ User.hasMany(Movie, {
+   foreignKey: 'user_id'
+ });
+
+ module.exports = User;
