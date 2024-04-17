@@ -13,21 +13,21 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  movie.init({
+  Movie.init({
     name: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull:false,
     },
     year: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull:false,
     },
     description: {
-      type: Sequelize.TEXT
+      type: DataTypes.TEXT
     },
   }, {
     sequelize,
     modelName: 'Movie',
   });
-  return movie;
+  return Movie;
 };
