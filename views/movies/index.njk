@@ -1,36 +1,34 @@
 {% extends "partials/layout.njk" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<style>
-    table, th, td {
-        border: 1px solid black;
-    }
-</style>
-    <a href="/movies/add"> Add </a>
-
-<table>
-    <thead>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Year</th>
-        <th>Description</th>
-        <th>Actions</th>
-    </thead>
-    <tbody>
-        {% for movie in movies %}
-        <tr>
-            <td>{{movie.id}}</td>
-            <td>{{movie.name}}</td>
-            <td>{{movie.year}}</td>
-            <td>{{movie.description}}</td>
-            <td>
-                <a href="/movies/view?id={{movie.id}}">View</a>
-                <a href="/movies/edit/{{movie.id}}">Edit</a>
-                <a href="/movies/delete/{{movie.id}}">Delete</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <a href="/movies/add">Add</a>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>User</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+                <tr>
+                    <td>{{movie.id}}</td>
+                    <td>{{movie.name}}</td>
+                    <td>{{movie.year}}</td>
+                    <td>{{movie.User.name}}</td>
+                    <td>
+                        <a href="/movies/view?id={{movie.id}}">View</a>
+                        <a href="/movies/edit/{{movie.id}}">Edit</a>
+                        <a href="/movies/delete/{{movie.id}}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

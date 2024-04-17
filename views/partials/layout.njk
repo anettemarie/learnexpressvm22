@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}cool page{% endblock %}</title>
+    <title>{% block title %}Cool page{% endblock %}</title>
 </head>
 <body>
     {% include "partials/nav.njk" %}
-    {% block content %}
-        
-    {% endblock %}
+    {% block content %}{% endblock %}
 </body>
 </html>
