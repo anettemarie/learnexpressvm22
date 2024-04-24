@@ -2,32 +2,29 @@
 {% block title %}Register{% endblock %}
 {% block content %}
   {% if errors %}
-    <ul>
       {% for error in errors %}
-        <li>{{error}}</li>
         <div class="alert alert-danger" role="alert">
-  A simple danger alert—check it out!
-</div>
+          {{error}}
+        </div>
       {% endfor %}
-    </ul>
   {% endif %}
   <form action="/register" method="POST">
-<div class="mb-3">
-  <label for="name" class="form-label">Name</label>
-  <input type="text" class="form-control" id="name"name="name" placeholder="Name">
-</div>
-<div class="mb-3">
-  <label for="email" class="form-label">Email</label>
-  <input type="email" class="form-control" id="email" placeholder="Email "name="email">
-</div>
-<div class="mb-3">
-  <label for="password" class="form-label">Password</label>
-  <input type="password" class="form-control" id="password" placeholder="Password" name="Password">
-</div>
-<div class="mb-3">
-  <label for="password_confirmation" class="form-label">Password Confirmation</label>
-  <input type="password confirmation" class="form-control" id="password_confirmation" placeholder="Password Confirmation" name="Password Confirmation">
-</div>
-<input class="btn btn-primary" type="submit" value="Login">
-</form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" class="form-control" type="text" placeholder="Name" name="name">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" class="form-control" type="email" placeholder="Email" name="email">
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+    </div>
+    <div class="mb-3">
+        <label for="password_confirm" class="form-label">Password Confirm</label>
+        <input id="password_confirm" class="form-control" type="password" placeholder="Password Confirmation" name="password_confirm">
+    </div>
+    <input class="btn btn-primary" type="submit" value="Register">
+  </form>
 {% endblock %}

@@ -1,12 +1,8 @@
 {% extends "partials/layout.njk" %}
 {% block title %}{{ movie.name }}{% endblock %}
 {% block content %}
-    <style>
-        table, th, td {
-            border: 1px solid black;
-        }
-    </style>
-    <table>
+
+    <table class="table table-striped">
         <tbody>
             <tr>
                 <th>ID</th>
