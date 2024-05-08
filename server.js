@@ -3,6 +3,7 @@ const nunjucks = require('nunjucks');
 const app = express();
 const port = 3000;
 const cookieParser = require('cookie-parser');
+const {Movie, User} = require('./models/index.js');
 app.use(cookieParser());
 
 const session = require('express-session');
@@ -31,9 +32,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
-  console.log(req.session.user);
-  res.render('index.njk');
+app.get('/', async (req, res) => {
+  const movies = await Movie.findAll();
+  res.render('index.njk', {movies});
 });
 
 app.get('/page2', (req, res) => {

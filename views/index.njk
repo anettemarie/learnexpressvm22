@@ -1,5 +1,21 @@
 {% extends "partials/layout.njk" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-    <h1> <3 </h1>
+
+<h1>juhu</h1>
+
+ <div class="row">
+    {% for movie in movies %}
+<div class="col-3">
+    <div class="card">
+  {# <img src="..." class="card-img-top" alt="..."> #}
+    <div class="card-body">
+         <h5 class="card-title"> {{movie.name}}</h5>
+            <p class="card-text">{{movie.description}}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}
