@@ -15,10 +15,10 @@ router.post('/register', async (req, res) => {
     });
     let errors = [];
     if(req.body.password !== req.body.password_confirm){
-       errors.push("passwords don't match");
+       errors.push("Passwords don't match");
     }
     if(user){
-        errors.push("There is user with this email");
+        errors.push("There already is a user with this email adress");
     }
     if(errors.length){
         req.session.errors = errors;
@@ -66,4 +66,4 @@ router.get('/logout', async (req, res) => {
     
 });
 
-module.exports = router;
+module.exports = router; 

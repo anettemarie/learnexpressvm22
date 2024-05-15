@@ -24,4 +24,4 @@ User.associations = () => {
     User.hasMany(Movie);
 };
 
-module.exports = User;
+module.exports = User; 

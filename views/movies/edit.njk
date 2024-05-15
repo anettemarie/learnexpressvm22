@@ -1,7 +1,6 @@
 {% extends "partials/layout.njk" %}
 {% block title %}Add movie{% endblock %}
 {% block content %}
-
   <form action="/movies/edit/{{movie.id}}" method="POST">
 
    <div class="mb-3">
@@ -20,8 +19,5 @@
     </div>
 
  <input id="text" class="btn btn-primary" type="submit" value="Update">
-   
   </form>
-
-
-{% endblock %}
+{% endblock %} 

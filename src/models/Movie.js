@@ -22,4 +22,4 @@ const Movie = sequelize.define('Movie', {
 
 Movie.belongsTo(User, {foreignKey: 'user_id'});
 
-module.exports = Movie;
+module.exports = Movie; 

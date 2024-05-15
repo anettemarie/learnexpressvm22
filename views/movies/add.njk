@@ -1,8 +1,7 @@
 {% extends "partials/layout.njk" %}
 {% block title %}Add movie{% endblock %}
 {% block content %}
-
- <form action="/movies/add" method="POST">
+ <form action="/movies/add" method="POST" enctype="multipart/form-data">
 
   <div class="mb-3">
      <label for="text" class="form-label">Movie name</label>
@@ -19,6 +18,8 @@
     <textarea id="description" class="form-control" name="description" placeholder="Movie description">{{movie.description}}</textarea>
     </div>
 
+    <input type="file" name="image">
+
     <input class="btn btn-primary" type="submit" value="Add">
   </form>
-{% endblock %}
+{% endblock %} 
